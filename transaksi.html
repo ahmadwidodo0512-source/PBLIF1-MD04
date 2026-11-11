@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transaksi Laundry - Laundry Kiloan</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧺%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGASI (sama di semua halaman) -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand">🧺 Kiloan Laundry<small>Pengelolaan Laundry Kiloan</small></div>
+  <ul class="menu" id="menu">
+    <li><a href="index.html">🏠 Dashboard</a></li>
+    <li><a href="pelanggan.html">👥 Data Pelanggan</a></li>
+    <li class="active"><a href="transaksi.html">📦 Transaksi Laundry</a></li>
+    <li><a href="laporan.html">📊 Laporan</a></li>
+    <li><a href="pengaturan.html">⚙️ Pengaturan</a></li>
+  </ul>
+</aside>
+
+<div class="main">
+  <header class="header">
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <h2>Transaksi Laundry</h2>
+    <span class="user">Halo, Admin</span>
+  </header>
+
+  <section class="page" id="page-transaksi">
+    <div class="grid2" style="grid-template-columns:1fr 2fr">
+      <div class="box">
+        <h3>Buat Transaksi Baru</h3>
+        <div class="fg"><label>Pelanggan</label><select id="trPel"></select><div class="err" id="eTrPel"></div></div>
+        <div class="fg"><label>Jenis Layanan</label><select id="trLay"></select></div>
+        <div class="fg"><label>Berat (kg)</label><input type="number" id="trBerat" step="0.1" min="0" placeholder="Contoh: 3.5"><div class="err" id="eTrBerat"></div></div>
+        <div class="fg"><label>Catatan</label><textarea id="trCat" rows="2" placeholder="Opsional"></textarea></div>
+        <div class="fg"><label>Total Harga (otomatis)</label><div class="total-box" id="trTotal">Rp 0</div></div>
+        <button class="btn btn-p" id="btnSimpanTr" style="width:100%">Simpan Transaksi</button>
+      </div>
+      <div class="box">
+        <div class="bar"><input id="cariTr" placeholder="🔍 Cari kode atau nama..."><select id="filterStatus"></select></div>
+        <div class="tw"><table><thead><tr><th>Kode</th><th>Pelanggan</th><th>Layanan</th><th>Berat</th><th>Total</th><th>Masuk</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="tbTr"></tbody></table></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="receipt"></div>
+<div id="toasts"></div>
+
+<script src="js/app.js"></script>
+<script src="js/transaksi.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Laundry Kiloan</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧺%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGASI (sama di semua halaman) -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand">🧺 Kiloan Laundry<small>Pengelolaan Laundry Kiloan</small></div>
+  <ul class="menu" id="menu">
+    <li class="active"><a href="index.html">🏠 Dashboard</a></li>
+    <li><a href="pelanggan.html">👥 Data Pelanggan</a></li>
+    <li><a href="transaksi.html">📦 Transaksi Laundry</a></li>
+    <li><a href="laporan.html">📊 Laporan</a></li>
+    <li><a href="pengaturan.html">⚙️ Pengaturan</a></li>
+  </ul>
+</aside>
+
+<div class="main">
+  <header class="header">
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <h2>Dashboard</h2>
+    <span class="user">Halo, Admin</span>
+  </header>
+
+  <section class="page" id="page-dashboard">
+    <div class="stats">
+      <div class="stat"><div class="ico">👥</div><div><small>Total Pelanggan</small><b id="stPelanggan">0</b></div></div>
+      <div class="stat"><div class="ico">🫧</div><div><small>Cucian Aktif</small><b id="stAktif">0</b></div></div>
+      <div class="stat"><div class="ico">✅</div><div><small>Selesai Hari Ini</small><b id="stSelesai">0</b></div></div>
+      <div class="stat"><div class="ico">💰</div><div><small>Pendapatan Hari Ini</small><b id="stUang">Rp 0</b></div></div>
+    </div>
+    <div class="box"><div class="bar"><h3>Pendapatan 7 Hari Terakhir</h3><a class="btn btn-p" href="transaksi.html">+ Tambah Transaksi Baru</a></div>
+      <div style="height:260px"><canvas id="grafik"></canvas></div></div>
+    <div class="box"><h3>Cucian Terbaru</h3><div class="tw"><table><thead><tr><th>Kode</th><th>Pelanggan</th><th>Layanan</th><th>Berat</th><th>Total</th><th>Status</th></tr></thead><tbody id="tbTerbaru"></tbody></table></div></div>
+  </section>
+</div>
+
+<div id="toasts"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
